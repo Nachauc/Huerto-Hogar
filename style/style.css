@@ -1,0 +1,98 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: #F7F7F7;
+    background-image: url("../img/papelreciclado.png");
+    background-repeat: repeat;
+}
+
+h1{
+    color: #8B4513;
+}
+
+.btn-outline-secondary{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100px;
+    border-color: #8B4513;
+    background-color: #2E8B57;
+    color: #8B4513;
+}
+
+.btn-outline-secondary:hover{
+    background-color: #FFD700;
+    color: #8B4513;
+}
+
+.card-title{
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    color: #8B4513;
+}
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo-navbar{
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.contener-boton{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;    
+    line-height: 1;
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    color: #8B4513;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+.navbar-nav .nav-link{
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    color: #8B4513;
+
+}
+
+.dropdown-item{
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    color: #8B4513;
+}
