@@ -34,8 +34,18 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
                     <ul class="navbar-nav align-item-center me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Frutas Frescas</a></li>
+                                <li><a class="dropdown-item" href="#">Verduras Orgánicas</a></li>
+                                <li><a class="dropdown-item" href="#">Productos Orgánico</a></li>
+                                <li><a class="dropdown-item" href="#">Productos Lácteos</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Nosotros</a>
@@ -46,17 +56,7 @@
                          <li class="nav-item">
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                          </li>
-                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Perfil
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Gestionar Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
-                                <li><a class="dropdown-item" href="#">Seguimiento</a></li>
-                            </ul>
-                        </li>
+    
                     </ul>
                 </div>
                 <div class="d-flex align-items-center gap-3">
@@ -64,13 +64,21 @@
                     <button type="button" class="btn btn-outline-success">
                         🛒 Carrito de compras
                     </button>
-            
+                
+                    <ul class="navbar-nav list-unstyled mb-0 small text-end">
+                        <li class="nav-item">
+                            <a class="nav-link py-0 fw-semibold" href="#">Acceder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-0" href="#">Crear una cuenta</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
 
     </header>
-    <main>
+    <main class="contenido-principal">
         <section id="formularioContacto">
             <div class="contenedor">
                 <div class="logo">
@@ -102,6 +110,12 @@
     </main>
 
     <footer>
+        <section id="footer">
+            <div class="footer-contenido">
+            <p>&copy 2026 🌱 Huerto Hogar | Del campo al hogar 🏠 - Version 1.0</p>
+        </div>
+
+        </section>
 
     </footer>
 
