@@ -80,11 +80,11 @@ for (const i of productosEstrellas){
 
     const imagenProducto = document.createElement("img");
     imagenProducto.src = i.imagen;
-    imagenProducto.className = "imagen-producto";
+    imagenProducto.className = "imagen-producto ";
     card.appendChild(imagenProducto);
 
     const precioProducto = document.createElement("p");
-    precioProducto.className = "precio-producto mt-auto mb-2";
+    precioProducto.className = "precio-producto mt-1 mb-2";
     precioProducto.textContent = "$ "+i.precio+" x Kg";
     card.appendChild(precioProducto);
 
