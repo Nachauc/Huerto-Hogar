@@ -76,36 +76,38 @@
     </header>
     <main class="contenido-principal">
         
-        <section id="cartaPresentacion class=container py-4">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8">
-                    <div class="card shadow border-0 overflow-hidden">
-                        <div class="row g-0 align-items-center">
-                            <div class="col-md-5">
-                                <img src="../img/verduras.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                                    alt="Productos HuertoHogar" style="max-height: 280px;">
-                            </div>
-        
-                            <div class="col-md-7">
-                                <div class="card-body p-4 text-center text-md-start">
-                                    <h3 class="card-title fw-bold text-success mb-3">Nuestros Productos</h3>
-                                    <p class="card-text text-muted fs-6">
-                                        HuertoHogar es una tienda online dedicada a llevar la frescura y calidad de los
-                                        productos del campo directamente a tu hogar.
-                                    </p>
-                                    <p class="card-text mb-0">
-                                        <small class="text-success fw-semibold">🌱 Del campo al hogar 🏠</small>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
+        <section class="container my-4">
+            <div class="contenedor-presentacion">
+                <div class="tarjeta-presentacion rounded-4 tarjeta-izquierda">
+                    <div class="producto-presentacion">
+                        <img src="../img/verduras.jpg" class="rounded-5" alt="verduras">
+                    </div>
+                    <div class="texto-presentacion">
+                        <H3>Frescura Real: Del Campo a tu Mesa</H3>
+                        <p>En Huerto Hogar seleccionamos verduras de la más alta calidad, cosechadas en su punto óptimo de
+                            maduración. Sin largos períodos de almacenamiento ni intermediarios, garantizamos el sabor crujiente
+                            y los nutrientes intactos que solo la tierra chilena puede ofrecer.</p>
+                        <span class="lema">🌱 Del campo al hogar 🏠</span>
                     </div>
                 </div>
+                <div class="tarjeta-presentacion rounded-4 tarjeta-derecha">
+                    <div class="producto-presentacion">
+                        <img src="../img/presentacion1.png" class="rounded-5" alt="verduras">
+                    </div>
+                    <div class="texto-presentacion">
+                        <H3>Tu Cosecha del Día a un Clic</H3>
+                        <p>Llevar alimentos saludables a tu cocina nunca fue tan sencillo. Contamos con una selección fresca de
+                            temporada lista para acompañar tus comidas de la semana. Explora nuestro catálogo a continuación,
+                            elige tus productos favoritos y recibe el campo en la puerta de tu hogar.</p>
+                        <span class="lema">🌱 Del campo al hogar 🏠</span>
+                    </div>
+                </div>
+        
             </div>
+        
         </section>
 
-        <section id="productosEstrella" class="container mt-1 py-4">
+        <section id="productos" class="container mt-1 py-4">
             <h2 class="text-center mb-4">Nuestros Productos</h2>
         
             <div class="row" id="contenedorProductos"></div>

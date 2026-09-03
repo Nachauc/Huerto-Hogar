@@ -109,7 +109,7 @@ if (section) {
 
         
         const botonAgregar = document.createElement("button");
-        botonAgregar.textContent = "Añadir";
+        botonAgregar.textContent = "ir a Producto";
         botonAgregar.className = "btn btn-success btn-sm w-100";
         botonAgregar.addEventListener("click", function(){
             agregarAlCarrito(i);

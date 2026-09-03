@@ -103,10 +103,21 @@ footer{
 }
 
 /*Menú*/
-.card-text{
-    color: #333333;
+
+.portada {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
+.portada img{
+    width: 100% ;
+    max-width: 280px;
+    max-height: 250px;
+    object-fit: cover;
+}
 
 /*productos estrellas*/
 .card{
@@ -242,4 +253,54 @@ footer{
 .btn-outline-success:hover{
     background-color:#FFD700;
     color:#333333;
+}
+
+/*productos presentación*/
+.contenedor-presentacion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+}
+
+.tarjeta-presentacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /*espacio de separación entre entre imagen y text*/
+    background-color: #F7F7F7;
+    padding: 25px;
+    width: 70%;
+}
+
+.tarjeta-izquierda {
+    align-self: flex-start;     
+}
+
+.tarjeta-derecha {
+    align-self: flex-end;      
+}
+
+.tarjeta-centro {
+    align-self: center;      
+}
+
+
+.producto-presentacion{
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.producto-presentacion img{
+    width: 100% ;
+    max-width: 280px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.texto-presentacion{
+    flex:7;
 }
