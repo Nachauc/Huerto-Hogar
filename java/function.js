@@ -57,50 +57,135 @@ var productosEstrellas = [
     }
 ]
 
+    //NUEVO 🙀
+
+    function actuaizarContador(){
+        const contadorElemento = document.getElementById("contadorCarrito");
+        if (contadorElemento) {
+            let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+            contadorElemento.textContent = carritoActual.length > 0 ? `(${carritoActual.length})` : "";
+        }
+    }
+    function agregarAlCarrito(producto){
+        let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+        carritoActual.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carritoActual))
+        actuaizarContador();
+        alert(producto.nombre + "se ha añadido al carrito.");
+    }
+    
 const section = document.getElementById("productosEstrella");
-console.log(section);
+if (section) {
+    const contenedorCards = document.createElement("div");
+    contenedorCards.className = "contenedor-cards row g-3 justify-content-center";
+    section.appendChild(contenedorCards);
 
-const contenedorCards = document.createElement("div");
-contenedorCards.className = "contenedor-cards row g-3";
+    for (const i of productosEstrellas) {
+        const col = document.createElement("div");
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-2";
 
-section.appendChild(contenedorCards);
+        const card = document.createElement("div");
+        card.className = "card h-100 d-flex flex-column text-center p-2";
+        
+        const nombreProducto = document.createElement("h5");
+        nombreProducto.textContent = i.nombre;
+        nombreProducto.className = "titulo-producto fs-6 fw-bold";
+        card.appendChild(nombreProducto);
 
-for (const i of productosEstrellas){
-    const col = document.createElement("div");
-    col.className = "col-12 col-sm-6 col-md-4 col-lg-2";
+        const imagenProducto = document.createElement("img");
+        imagenProducto.src = i.imagen;
+        imagenProducto.className = "img-fluid mb-2";
+        imagenProducto.style.maxHeight = "100px";
+        imagenProducto.style.objectFit = "contain";
+        card.appendChild(imagenProducto);
 
-    const card = document.createElement("div");
-    card.className = "card h-100 d-flex flex-column test-center p-2";
-    contenedorCards.appendChild(card);
+        const precioProducto = document.createElement("p");
+        precioProducto.className = "precio-producto text-success fw-bold mt-1 mb-2";
+        precioProducto.textContent = "$ " + i.precio;
+        card.appendChild(precioProducto);
 
-    const nombreProducto = document.createElement("h5");
-    nombreProducto.textContent = i.nombre;
-    nombreProducto.className = "titulo-producto";
-    card.appendChild(nombreProducto);
+        const contenedorBoton = document.createElement("div"); 
+        contenedorBoton.className = "contenedor-boton mt-auto";
 
-    const imagenProducto = document.createElement("img");
-    imagenProducto.src = i.imagen;
-    imagenProducto.className = "imagen-producto ";
-    card.appendChild(imagenProducto);
+        
+        const botonAgregar = document.createElement("button");
+        botonAgregar.textContent = "Añadir";
+        botonAgregar.className = "btn btn-success btn-sm w-100";
+        botonAgregar.addEventListener("click", function(){
+            agregarAlCarrito(i);
+        });
 
-    const precioProducto = document.createElement("p");
-    precioProducto.className = "precio-producto mt-1 mb-2";
-    precioProducto.textContent = "$ "+i.precio+" x Kg";
-    card.appendChild(precioProducto);
-
-    const contenedorBoton = document.createElement("div");
-    contenedorBoton.className = "contenedor-boton";
-    card.appendChild(contenedorBoton);
-
-    const botonIrAProducto = document.createElement("button");
-    botonIrAProducto.textContent = "Ir a producto";
-    botonIrAProducto.className = "btn btn-outline-success";
-    botonIrAProducto.addEventListener("click", function(){
-        ir(i);
-    })
-    contenedorBoton.appendChild(botonIrAProducto);
-
-    col.appendChild(card);
-    contenedorCards.appendChild(col);
+        contenedorBoton.appendChild(botonAgregar);
+    
+    
+        card.appendChild(contenedorBoton)
+        col.appendChild(card);
+        contenedorCards.appendChild(col);
+    }
 }
+
+actuaizarContador();
+
+const contenedorCarrito = document.getElementById("contenedorCarrito");
+const totalPagarElemento = document.getElementById("totalPagar")
+
+if (contenedorCarrito) {
+    let carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+    let total = 0;
+    contenedorCarrito.innerHTML = "";
+
+    if (carritoGuardado.length === 0){
+        const mensajeVacio = document.createElement("p");
+        mensajeVacio.textContent = "Tu carrito esta vacio";
+        mensajeVacio.className = "text-center fs-4 mt-4 text-muted";
+        contenedorCarrito.appendChild(mensajeVacio);
+    } else {
+        for (const item of carritoGuardado){
+            total += item.precio;
+
+            const card = document.createElement("div");
+            card.className = "card mb-3 w-100 shadow-sm";
+            card.style.maxWidth = "500px";
+
+            const row = document.createElement("div");
+            row.className = "row g-0 align-items-center p-2";
+            card.appendChild(row);
+
+            const colImg = document.createElement("div");
+            colImg.className = "col-4 text-center";
+            const img = document.createElement("img");
+            img.src = item.imagen;
+            img.className = "img-fluid rounded";
+            img.style.maxHeight = "80px";
+            colImg.appendChild(img);
+            row.appendChild(colImg);
+
+            const colText = document.createElement("div");
+            colText.className = "col-8";
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body py-1";
+
+            const titulo = document.createElement("h5");
+            titulo.className = "card-tittle mb-1";
+            titulo.textContent = item.nombre;
+
+            const precio = document.createElement("p");
+            precio.className = "card-text fw-bold text-success mb-0";
+            precio.textContent = "$ "+item.precio;
+
+            cardBody.appendChild(titulo);
+            cardBody.appendChild(precio);
+            colText.appendChild(cardBody);
+            row.appendChild(colText);
+
+            contenedorCarrito.appendChild(card);
+        }
+    }
+    if (totalPagarElemento) {
+        totalPagarElemento.textContent = "Total: $" + total;
+    }
+}
+//NUEVO 🙀
+
 
