@@ -69,14 +69,14 @@ h1, .card-title{
     color:#2E8B57 !important;
 }   
 
-.btn-outline-success {
+.btn.btn-primary {
     font-weight: 500;
     border-color: #8B4513;
     background-color: #2E8B57;
     color: #FFFFFF; 
 }
 
-.btn-outline-success:hover {
+.btn.btn.btn-primary:hover {
     background-color: #FFD700;
     color:#333333;
     border-color: #FFD700;
@@ -215,4 +215,31 @@ footer{
     color:#333333;
     text-decoration: none;
     
+}
+
+
+/*offConvas*/
+
+.total-pagar h3{
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+.offcanvas-title{
+    color: #8B4513;
+}
+
+.totalPagar{
+    color: #8B4513;
+}
+
+.btn-outline-success{
+    background-color: #2E8B57;
+    color: #ffffff;
+}
+
+.btn-outline-success:hover{
+    background-color:#FFD700;
+    color:#333333;
 }
