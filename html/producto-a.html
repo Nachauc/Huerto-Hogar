@@ -10,15 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <title>Blogs</title>
+    <title>🌱Huerto Hogar</title>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
 
                 <a class="navbar-brand d-flex align-item-center gap-2 py-0" href="main-logout.html">
@@ -41,6 +37,7 @@
                                 Productos
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="producto-a.html">Todos los Productos</a></li>
                                 <li><a class="dropdown-item" href="#">Frutas Frescas</a></li>
                                 <li><a class="dropdown-item" href="#">Verduras Orgánicas</a></li>
                                 <li><a class="dropdown-item" href="#">Productos Orgánico</a></li>
@@ -69,54 +66,52 @@
                             <a class="nav-link py-0 fw-semibold" href="acceder.html">Acceder</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link py-0" href="#">Crear una cuenta</a>
+                            <a class="nav-link py-0" href="crear-cuenta.html">Crear una cuenta</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-</header>
+    </header>
     <main class="contenido-principal">
-        <section id="noticias">
-            <h2>Noticias Importantes</h2>
-            <div class="card mb-4" style="max-width: 900px;">
-                <div class="row g-0 flex-row-reverse">
-                    <div class="col-md-4">
-                        <img src="../img/huerto_casa.jpg" class="img-fluid " alt="huerto casa">
+        
+        <section class="container my-4">
+            <div class="contenedor-presentacion">
+                <div class="tarjeta-presentacion rounded-4 tarjeta-izquierda">
+                    <div class="producto-presentacion">
+                        <img src="../img/verduras.jpg" class="rounded-5" alt="verduras">
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Dato Curioso</h5>
-                            <p class="card-text">Cuenta la "leyenda" que el nombre surgió porque el fundador, cansado de que sus tomates se
-                                aplastaran en el refrigerador del súper, empezó vendiendo verduras desde el patio de su propia casa a los
-                                vecinos del barrio de ahí lo de "huerto" su huerto real y "hogar" porque literalmente operaba desde su casa.
-                                La primera "bodega" de la empresa habría sido el garage familiar, y el primer "sistema de delivery" era su
-                                propia bicicleta con un carrito improvisado atrás.</p>
-                            <p class="card-text"><small class="text-body-secondary">Ver mas de esta noticia aqui </small></p>
-                        </div>
+                    <div class="texto-presentacion">
+                        <H3>Frescura Real: Del Campo a tu Mesa</H3>
+                        <p>En Huerto Hogar seleccionamos verduras de la más alta calidad, cosechadas en su punto óptimo de
+                            maduración. Sin largos períodos de almacenamiento ni intermediarios, garantizamos el sabor crujiente
+                            y los nutrientes intactos que solo la tierra chilena puede ofrecer.</p>
+                        <span class="lema">🌱 Del campo al hogar 🏠</span>
                     </div>
                 </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0 flex-row-reverse">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                <div class="tarjeta-presentacion rounded-4 tarjeta-derecha">
+                    <div class="producto-presentacion">
+                        <img src="../img/presentacion1.png" class="rounded-5" alt="verduras">
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Datos Curioso</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-body-secondary">Ver mas de esta noticia aqui </small></p>
-                        </div>
+                    <div class="texto-presentacion">
+                        <H3>Tu Cosecha del Día a un Clic</H3>
+                        <p>Llevar alimentos saludables a tu cocina nunca fue tan sencillo. Contamos con una selección fresca de
+                            temporada lista para acompañar tus comidas de la semana. Explora nuestro catálogo a continuación,
+                            elige tus productos favoritos y recibe el campo en la puerta de tu hogar.</p>
+                        <span class="lema">🌱 Del campo al hogar 🏠</span>
                     </div>
                 </div>
+        
             </div>
+        
         </section>
 
+        <section id="productosVenta" class="container mt-1 py-4">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+        </section>
+        
     </main>
-
     <footer>
         <section id="footer">
             <div class="footer-contenido">
@@ -126,7 +121,7 @@
         </section>
 
     </footer>
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="../java/function.js"></script>
     <section id="offcanvas-button">
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

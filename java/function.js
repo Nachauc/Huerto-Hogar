@@ -1,5 +1,10 @@
 console.log("hola");
 
+function ir(producto) {
+    window.location.href = "./producto-a.html"; 
+}
+
+//menu principal
 var productosEstrellas = [
     {
         "id": 1,
@@ -57,71 +62,145 @@ var productosEstrellas = [
     }
 ]
 
-    //NUEVO 🙀
-
-    function actuaizarContador(){
-        const contadorElemento = document.getElementById("contadorCarrito");
-        if (contadorElemento) {
-            let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
-            contadorElemento.textContent = carritoActual.length > 0 ? `(${carritoActual.length})` : "";
-        }
-    }
-    function agregarAlCarrito(producto){
-        let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
-        carritoActual.push(producto);
-        localStorage.setItem("carrito", JSON.stringify(carritoActual))
-        actuaizarContador();
-        alert(producto.nombre + "se ha añadido al carrito.");
-    }
-    
 const section = document.getElementById("productosEstrella");
-if (section) {
-    const contenedorCards = document.createElement("div");
-    contenedorCards.className = "contenedor-cards row g-3 justify-content-center";
-    section.appendChild(contenedorCards);
+console.log(section);
 
-    for (const i of productosEstrellas) {
-        const col = document.createElement("div");
-        col.className = "col-12 col-sm-6 col-md-4 col-lg-2";
+if(section){
+  const contenedorCards = document.createElement("div");
+  contenedorCards.className = "contenedor-cards row g-3";
 
-        const card = document.createElement("div");
-        card.className = "card h-100 d-flex flex-column text-center p-2";
-        
-        const nombreProducto = document.createElement("h5");
-        nombreProducto.textContent = i.nombre;
-        nombreProducto.className = "titulo-producto fs-6 fw-bold";
-        card.appendChild(nombreProducto);
+  section.appendChild(contenedorCards);
 
-        const imagenProducto = document.createElement("img");
-        imagenProducto.src = i.imagen;
-        imagenProducto.className = "img-fluid mb-2";
-        imagenProducto.style.maxHeight = "100px";
-        imagenProducto.style.objectFit = "contain";
-        card.appendChild(imagenProducto);
+  for (const i of productosEstrellas) {
+    const col = document.createElement("div");
+    col.className = "col-12 col-sm-6 col-md-4 col-lg-2";
 
-        const precioProducto = document.createElement("p");
-        precioProducto.className = "precio-producto text-success fw-bold mt-1 mb-2";
-        precioProducto.textContent = "$ " + i.precio;
-        card.appendChild(precioProducto);
+    const card = document.createElement("div");
+    card.className = "card h-100 d-flex flex-column test-center p-2";
+    contenedorCards.appendChild(card);
 
-        const contenedorBoton = document.createElement("div"); 
-        contenedorBoton.className = "contenedor-boton mt-auto";
+    const nombreProducto = document.createElement("h5");
+    nombreProducto.textContent = i.nombre;
+    nombreProducto.className = "titulo-producto";
+    card.appendChild(nombreProducto);
 
-        
-        const botonAgregar = document.createElement("button");
-        botonAgregar.textContent = "Añadir";
-        botonAgregar.className = "btn btn-success btn-sm w-100";
-        botonAgregar.addEventListener("click", function(){
-            agregarAlCarrito(i);
-        });
+    const imagenProducto = document.createElement("img");
+    imagenProducto.src = i.imagen;
+    imagenProducto.className = "imagen-producto";
+    card.appendChild(imagenProducto);
 
-        contenedorBoton.appendChild(botonAgregar);
-    
-    
-        card.appendChild(contenedorBoton)
-        col.appendChild(card);
-        contenedorCards.appendChild(col);
-    }
+    const precioProducto = document.createElement("p");
+    precioProducto.className = "precio-producto mt-auto mb-2";
+    precioProducto.textContent = "$ " + i.precio + " x Kg";
+    card.appendChild(precioProducto);
+
+    const contenedorBoton = document.createElement("div");
+    contenedorBoton.className = "contenedor-boton";
+    card.appendChild(contenedorBoton);
+
+    const botonIrAProducto = document.createElement("button");
+    botonIrAProducto.textContent = "Ir a producto";
+    botonIrAProducto.className = "btn btn-outline-success";
+    botonIrAProducto.addEventListener("click", function () {
+      ir(i);
+    });
+    contenedorBoton.appendChild(botonIrAProducto);
+
+    col.appendChild(card);
+    contenedorCards.appendChild(col);
+  }
+}
+
+function actuaizarContador() {
+  const contadorElemento = document.getElementById("contadorCarrito");
+  if (contadorElemento) {
+    let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+    contadorElemento.textContent =
+      carritoActual.length > 0 ? `(${carritoActual.length})` : "";
+  }
+}
+
+function agregarAlCarrito(producto) {
+  let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+  carritoActual.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(carritoActual));
+  actuaizarContador();
+  alert(producto.nombre + "se ha añadido al carrito.");
+}
+
+
+const prod = document.getElementById("productosVenta");
+console.log(prod);
+
+if (prod) {
+  const contenedorCards = document.createElement("div");
+  contenedorCards.className = "contenedor-cards row g-4";
+  prod.appendChild(contenedorCards);
+
+  for (const i of productosEstrellas) {
+    const col = document.createElement("div");
+    col.className = "col-12 col-md-6 col-lg-4";
+
+    const card = document.createElement("div");
+    card.className = "card h-100 shadow-sm p-3";
+
+    const rowCard = document.createElement("div");
+    rowCard.className = "row g-2 align-item-start h-100";
+
+    //imagen ocupará col-4 y el texto col-8 para completar los 12
+    const colImg = document.createElement("div");
+    colImg.className = "col-4";
+
+    const imagenProducto = document.createElement("img");
+    imagenProducto.src = i.imagen;
+    imagenProducto.className = "img-fluid rounded";
+    imagenProducto.style.height = "100%";
+    imagenProducto.style.objectFit = "cover";
+    colImg.appendChild(imagenProducto);
+
+    const colText = document.createElement("div");
+    colText.className = "col-8";
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body p-0 d-flex flex-column h-100";
+
+    const nombreProducto = document.createElement("h5");
+    nombreProducto.textContent = i.nombre;
+    nombreProducto.className = "titulo-producto card-title fs-6 fw-bold mt-0 mb-1";
+
+    const precioProducto = document.createElement("p");
+    precioProducto.className = "precio-producto card-text text-success fw-bold mb-1";
+    precioProducto.textContent = "$ " + i.precio +  " x Kg";
+
+    const descripcionProducto = document.createElement("p");
+    descripcionProducto.className = "descripcion-producto card-text small mb-2";
+    descripcionProducto.textContent = i.descripcion;
+
+    const contenedorBoton = document.createElement("div");
+    contenedorBoton.className = "mt-auto";
+
+    const botonAgregar = document.createElement("button");
+    botonAgregar.textContent = "Añadir al Carrito";
+    botonAgregar.className = "btn btn-success btn-sm w-100";
+    botonAgregar.addEventListener("click", function () {
+      agregarAlCarrito(i);
+    });
+
+    contenedorBoton.appendChild(botonAgregar);
+
+    cardBody.appendChild(nombreProducto);
+    cardBody.appendChild(precioProducto);
+    cardBody.appendChild(descripcionProducto);
+    cardBody.appendChild(contenedorBoton);
+    colText.appendChild(cardBody);
+
+    rowCard.appendChild(colImg);
+    rowCard.appendChild(colText);
+    card.appendChild(rowCard);
+
+    col.appendChild(card);
+    contenedorCards.appendChild(col);
+  }
 }
 
 actuaizarContador();
@@ -186,126 +265,4 @@ if (contenedorCarrito) {
         totalPagarElemento.textContent = "Total: $" + total;
     }
 }
-//NUEVO 🙀
-
-
-
-//VALIDACIONES CREAR USUARIO//
-
-document.addEventListener("DOMContentLoaded",() =>{
-
- const btnEnviar = document.getElementById("btnEnviar");
-
- btnEnviar.addEventListener("click",()=>{
-
-    let valido = true;
-
-    /*validacion run*/
-    const run= document.getElementById("inputRun").value.trim().toUpperCase();
-    const errorRun = document.getElementById("errorRun");
-
-    if(run ==""){
-        errorRun.textContent= "El run es obligatorio.";
-        valido= false;
-    
-    }else if (run.length <7 || run.length >9){
-        errorRun.textContent = "El run debe tener entre 7 y 9 caracteres."
-        valido= false;
-
-    }else if (!/^[0-9]+[0-9K]$/.test(run)){
-        errorRun.textContent = "El run debe tener numeros y un digito"
-        valido=false;
-
-
-    }else{
-        errorRun.textContent="El run no es Valido"
-    }
-
-    /*validacion nombre y apellido*/
-
-    const nombre = document.getElementById("inputNombre").value.trim();
-    const errorNombre = document.getElementById("errorNombre");
-
-    if (nombre==""){
-        errorNombre.textContent="El nombre es obligatorio";
-        valido = false;
-
-    }else if (nombre.length>50){
-        errorNombre.textContent ="Maximo 50 caracteres.",
-        valido = false;
-    }else{
-        errorNombre.textContent = "";
-    }
-
-    const apellido = document.getElementById("inputApellidos").value.trim();
-    const errorApellido = document.getElementById("errorApellido");
-
-    if(apellidos == ""){
-        errorApellido.textContent = "Los apellidos son obligatorio";
-        valido = false;
-
-    }else if (apellido.length >100){
-        errorApellido.textContent = "Maximo 100 caracteres."
-        valido = false;
-    }else{
-        errorApellido.textContent = "";
-    }
-    
-    /*validacion Correo*/
-
-    const correo = document.getElementById("inputCorreo").value.trim();
-    const errorCorreo = document.getElementById("ErrorCorreo");
-    const dominiosPermitidos = ["duoc.cl","profesor.duoc.cl","gmail.com"];
-    const dominoCorreo = correo.split("@")[1];
-
-    if(correo == ""){
-        errorCorreo.textContent = "El correo es Obligatorio.";
-        valido = false;
-
-    }else if(correo.length >100){
-        errorCorreo.textContent = "Maximo 100 caracteres";
-        valido = false;
-
-
-    }else if(!dominiosPermitidos.includes(dominoCorreo)){
-        errorCorreo.textContent ="Solo se permiten correo @duoc.cl,@profesor.duoc.cl,@gmail.com";
-        valido = false;
-    }else{
-        errorCorreo.textContent = " El correo no es valido"
-    }
-
-
-    const seleccionRegion = document.getElementById("SeleccionRegion");
-    const seleccionComuna = document.getElementById("seleccionComuna");
-
-
-    RegionesComunas.forEach((item,index) =>{
-        const opcion = document.createElement("option");
-        opcion.value = index;
-        opcion.textContent = item.region;
-        seleccionRegion.appendChild(opcion);
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if(valido){
-        window.location.href = "main-logout.html";
-    }
-
-
-
- });
-});
-
 
