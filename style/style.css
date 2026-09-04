@@ -292,6 +292,21 @@ footer{
 }
 
 
+/*FORMULARIO CREACION CUENTA*/
+#formularioCrear .contenedor{
+    font-family:"Montserrat", sans-serif ;
+    text-align: center;
+    max-width: 500px ;
+    margin-top: 50px;
+    margin: 20px auto ;
+    padding: 30px 15px ;
+
+}
+
+
+
+
+
 
 /*Acceso*/
 .acceder{
