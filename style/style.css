@@ -244,6 +244,55 @@ footer{
     margin-top: 25px;
 }
 
+/*NOSOTROS*/
+#contenido-nosotros .card{
+    font-family: "Montserrat", sans-serif;
+    margin-top: 50px;
+    overflow: hidden;
+   
+}
+
+#contenido-nosotros .card-izquierda{
+    margin-right: auto;
+    margin-left: 4%;
+}
+
+#contenido-nosotros .card-derecha{
+    margin-left: auto;
+    margin-right: 4%;
+}
+#contenido-nosotros .card .row{
+    align-items: stretch;
+    justify-content:space-evenly;
+}
+#contenido-nosotros .card .col-md-4{
+    display: flex;
+  
+}
+#contenido-nosotros .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 ;
+}
+
+#contenido-nosotros h2{
+    font-family: "Playfair Display",serif;
+    margin-top: 25px;
+}
+
+#contenido-nosotros .titulo-primero{
+    text-align: left;
+    margin-left: 25%;
+}
+
+#contenido-nosotros .titulo-segundo{
+    text-align: right;
+    margin-right: 25%;
+}
+
+
+
 /*Acceso*/
 .acceder{
     display: flex;
