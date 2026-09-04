@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/administrador/adm-style/style-admin.css">
+
+    <title>🌱HH Administrador</title>
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-md-row min-vh-100">
+        <aside class="bg-light border-end p-3" style="width: 250px; flex-shrink: 0;">
+            <div class="d-flex align-items-center gap-2 mb-4">
+                <img src="/administrador/adm-img/admin.png" alt="Adm" style="width: 50px;">
+                <span class="fw-bold">HH Admin</span>
+            </div>
+
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="#" class="nav-link active" id="menuProductos"> Productos</a>
+                </li>
+            </ul>
+            <hr>
+            <a href="/html/main-logout.html" class="btn btn-outline-danger w-100 btn-sm">Salir</a>
+        </aside>
+
+
+        <main class="flex-grow-1 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Gestión de Productos</h2>
+                <button class="btn btn-success" id="btnAgregarProducto">+ Agregar Producto</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio ($)</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaProductosAdmin">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-tittle" id="modalProductoLabel">Formulario Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form id="formProducto">
+                    <div class="modal-body">
+                        <input type="hidden" id="editandoId">
+
+                        <div class="mb-3">
+                            <label for="prodId" class="form-label">ID</label>
+                            <input type="number" class="form-control" id="prodId" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="prodNombre" maxlength="100" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodimagen" class="form-label">Enlace de Imagen</label>
+                            <input type="text" class="form-control" id="prodImagen"
+                                placeholder="../administrador/adm-img">
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodPrecio" class="form-label">Precio($)</label>
+                            <input type="number" class="form-control" id="prodPrecio" min="0" required>
+                        </div>
+                        <div>
+                            <label for="prodStock" class="form-label">Stock</label>
+                            <input type="number" class="form-control" id="prodStock" min="0" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodDescripcion" class="form-label">Descripcion</label>
+                            <textarea type="form-control" class="form-control" id="prodDescripcion" rows="2"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <section id="footer" class="text-center py-3 border-top">
+            <p class="mb-0">&copy 2026 🌱 Huerto Hogar | Del campo al hogar 🏠 - Version 1.0</p>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../adm-java/function-admin.js"></script>
+</body>
+
+</html>
