@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
 
     }else{
-        errorRun.textContent="El run no es Valido"
+        errorRun.textContent=""
     }
 
     /*validacion nombre y apellido*/
@@ -322,10 +322,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         errorNombre.textContent = "";
     }
 
-    const apellido = document.getElementById("inputApellidos").value.trim();
+    const apellido = document.getElementById("inputApellido").value.trim();
     const errorApellido = document.getElementById("errorApellido");
 
-    if(apellidos == ""){
+    if(apellido == ""){
         errorApellido.textContent = "Los apellidos son obligatorio";
         valido = false;
 
@@ -339,7 +339,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     /*validacion Correo*/
 
     const correo = document.getElementById("inputCorreo").value.trim();
-    const errorCorreo = document.getElementById("ErrorCorreo");
+    const errorCorreo = document.getElementById("errorCorreo");
     const dominiosPermitidos = ["duoc.cl","profesor.duoc.cl","gmail.com"];
     const dominoCorreo = correo.split("@")[1];
 
@@ -356,32 +356,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         errorCorreo.textContent ="Solo se permiten correo @duoc.cl,@profesor.duoc.cl,@gmail.com";
         valido = false;
     }else{
-        errorCorreo.textContent = " El correo no es valido"
+        errorCorreo.textContent = ""
     }
-
-
-    const seleccionRegion = document.getElementById("SeleccionRegion");
-    const seleccionComuna = document.getElementById("seleccionComuna");
-
-
-    RegionesComunas.forEach((item,index) =>{
-        const opcion = document.createElement("option");
-        opcion.value = index;
-        opcion.textContent = item.region;
-        seleccionRegion.appendChild(opcion);
-
-    });
-
-
-
-
-
-
-
-
-
-
-
 
 
     if(valido){
@@ -391,5 +367,43 @@ document.addEventListener("DOMContentLoaded",() =>{
 
 
  });
+});
+
+
+/*VALIDACION REGION Y COMUNA*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const seleccionRegion = document.getElementById("seleccionRegion");
+  const seleccionComuna = document.getElementById("seleccionComuna");
+
+
+  RegionesComunas.forEach((item, index) => {
+    const opcion = document.createElement("option");
+    opcion.value = index;
+    opcion.textContent = item.region;
+    seleccionRegion.appendChild(opcion);
+
+  });
+
+  seleccionRegion.addEventListener("change", () => {
+    seleccionComuna.innerHTML = '<option value="" selected disabled>--Seleccione la Comuna--</option>';
+    const regionElegido = RegionesComunas[seleccionRegion.value];
+
+    regionElegido.comunas.forEach((comuna) => {
+      const opcion = document.createElement("option");
+      opcion.value = comuna;
+      opcion.textContent = comuna;
+      seleccionComuna.appendChild(opcion);
+    });
+
+
+
+  });
+
+
+
+
+
 });
 
