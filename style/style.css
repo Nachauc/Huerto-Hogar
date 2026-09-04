@@ -119,23 +119,24 @@ footer{
     object-fit: cover;
 }
 
-/*productos estrellas*/
-.card{
-    max-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
+/*productos*/
 .contenedor-cards{
     display: flex;
     flex-direction:row;
 }
 
-.titulo-producto {
+#productosEstrella .card {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+#productosEstrella .titulo-producto {
     color: #8B4513;
     min-height: 48px;        
     display: flex;
@@ -145,15 +146,47 @@ footer{
     text-align: center;
 }
 
-.imagen-producto{
+#productosEstrella .imagen-producto {
     height: 130px;
     width: 80%;
     object-fit: cover;       
     border-radius: 5px;
 }
 
-.precio-producto{
+#productoEstrella .precio-producto{
     margin-top: 5px;
+    color: #8B4513;
+}
+
+
+
+#productosVenta .titulo-producto {
+    color: #8B4513;
+    min-height: 48px;        
+    display: flex;
+    align-items: center;      
+    justify-content: flex-start;  
+    text-align: center;
+}
+
+#productosVenta .precio-producto{
+    color: #2E8B57;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#productosVenta .descripcion-producto{
+    color: #8B4513;
+    min-height: 48px;        
+    display: flex;
+    align-items: center;      
+    justify-content: center;  
+    margin-bottom: 10px;
+}
+
+
+#productosVenta.precio-producto {
     color: #8B4513;
 }
 
