@@ -273,3 +273,123 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
 })
 
+
+
+//VALIDACIONES CREAR USUARIO//
+
+document.addEventListener("DOMContentLoaded",() =>{
+
+ const btnEnviar = document.getElementById("btnEnviar");
+
+ btnEnviar.addEventListener("click",()=>{
+
+    let valido = true;
+
+    /*validacion run*/
+    const run= document.getElementById("inputRun").value.trim().toUpperCase();
+    const errorRun = document.getElementById("errorRun");
+
+    if(run ==""){
+        errorRun.textContent= "El run es obligatorio.";
+        valido= false;
+    
+    }else if (run.length <7 || run.length >9){
+        errorRun.textContent = "El run debe tener entre 7 y 9 caracteres."
+        valido= false;
+
+    }else if (!/^[0-9]+[0-9K]$/.test(run)){
+        errorRun.textContent = "El run debe tener numeros y un digito"
+        valido=false;
+
+
+    }else{
+        errorRun.textContent="El run no es Valido"
+    }
+
+    /*validacion nombre y apellido*/
+
+    const nombre = document.getElementById("inputNombre").value.trim();
+    const errorNombre = document.getElementById("errorNombre");
+
+    if (nombre==""){
+        errorNombre.textContent="El nombre es obligatorio";
+        valido = false;
+
+    }else if (nombre.length>50){
+        errorNombre.textContent ="Maximo 50 caracteres.",
+        valido = false;
+    }else{
+        errorNombre.textContent = "";
+    }
+
+    const apellido = document.getElementById("inputApellidos").value.trim();
+    const errorApellido = document.getElementById("errorApellido");
+
+    if(apellidos == ""){
+        errorApellido.textContent = "Los apellidos son obligatorio";
+        valido = false;
+
+    }else if (apellido.length >100){
+        errorApellido.textContent = "Maximo 100 caracteres."
+        valido = false;
+    }else{
+        errorApellido.textContent = "";
+    }
+    
+    /*validacion Correo*/
+
+    const correo = document.getElementById("inputCorreo").value.trim();
+    const errorCorreo = document.getElementById("ErrorCorreo");
+    const dominiosPermitidos = ["duoc.cl","profesor.duoc.cl","gmail.com"];
+    const dominoCorreo = correo.split("@")[1];
+
+    if(correo == ""){
+        errorCorreo.textContent = "El correo es Obligatorio.";
+        valido = false;
+
+    }else if(correo.length >100){
+        errorCorreo.textContent = "Maximo 100 caracteres";
+        valido = false;
+
+
+    }else if(!dominiosPermitidos.includes(dominoCorreo)){
+        errorCorreo.textContent ="Solo se permiten correo @duoc.cl,@profesor.duoc.cl,@gmail.com";
+        valido = false;
+    }else{
+        errorCorreo.textContent = " El correo no es valido"
+    }
+
+
+    const seleccionRegion = document.getElementById("SeleccionRegion");
+    const seleccionComuna = document.getElementById("seleccionComuna");
+
+
+    RegionesComunas.forEach((item,index) =>{
+        const opcion = document.createElement("option");
+        opcion.value = index;
+        opcion.textContent = item.region;
+        seleccionRegion.appendChild(opcion);
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if(valido){
+        window.location.href = "main-logout.html";
+    }
+
+
+
+ });
+});
+
