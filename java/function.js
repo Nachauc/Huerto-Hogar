@@ -365,6 +365,28 @@ document.addEventListener("DOMContentLoaded",() =>{
     }
 
 
+    /*VALIDACION PASSWORD*/
+
+    const password = document.getElementById("inputpassword").value.trim();
+    const errorPassword = document.getElementById("errorPassword")
+
+    if(password == ""){
+      errorPassword.textContent = "La contraseña es obligatoria";
+      valido = false;
+
+    }else if (password.length < 4 || password.length >10 ){
+      errorPassword.textContent = "La contraseña debe tener entre 4 y 10 caracteres";
+      valido = false;
+    }else{
+
+      errorPassword.textContent="";
+    }
+
+
+    const Direccion = document.getElementById("inputDireccion").value.trim();
+    const
+
+
 
  });
 });
