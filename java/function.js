@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     /*VALIDACION PASSWORD*/
 
     const password = document.getElementById("inputpassword").value.trim();
-    const errorPassword = document.getElementById("errorPassword")
+    const errorPassword = document.getElementById("errorPassword");
 
     if(password == ""){
       errorPassword.textContent = "La contraseña es obligatoria";
@@ -384,7 +384,18 @@ document.addEventListener("DOMContentLoaded",() =>{
 
 
     const Direccion = document.getElementById("inputDireccion").value.trim();
-    const
+    const errorDireccion = document.getElementById("errorDireccion");
+
+    if(Direccion == ""){
+      errorDireccion.textContent ="La direccion es obligatoria";
+      valido = false;
+
+    }else if(Direccion.length>300){
+      errorDireccion.textContent="El maximo de caracteres para la direccion son 300";
+      valido=false;
+    }else{
+      errorDireccion.textContent="";
+    }
 
 
 
