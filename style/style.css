@@ -1,0 +1,279 @@
+/*config*/
+html,body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contenido-principal{
+    flex:1;
+}
+
+body{
+    background-color: #F7F7F7;
+    background-image: url("../img/papelreciclado.png");
+    background-repeat:inherit;
+    font-family: "Montserrat",sans-serif;
+    color: #8B4513;
+}
+
+h1, .card-title{
+    color: #8B4513;
+    font-weight: 600;
+}
+
+/* NAVBAR */
+
+.logo-navbar{
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;    
+    line-height: 1;
+    font-weight: 600;
+    color:#8B4513;
+}
+
+.navbar-brand:hover{
+    color: #2E8B57;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+.navbar-nav .nav-link,
+.dropdown-item{
+    font-weight: 400;
+    color: #8B4513;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active{
+    color: #2E8B57;
+    background-color: #FFD700;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.show {
+    color: inherit; 
+    box-shadow: none; 
+}
+
+.navbar-nav .nav-link:active{
+    color:#2E8B57 !important;
+}   
+
+.btn-outline-success {
+    font-weight: 500;
+    border-color: #8B4513;
+    background-color: #2E8B57;
+    color: #FFFFFF; 
+}
+
+.btn-outline-success:hover {
+    background-color: #FFD700;
+    color:#333333;
+    border-color: #FFD700;
+}
+
+/*footer*/
+footer{
+    background-color:#8B4513;
+    color: rgb(248, 248, 248);
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 2%;
+}
+
+.footer-contenido{
+    max-width: 550px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 5px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+/*Menú*/
+.card-text{
+    color: #333333;
+}
+
+
+/*productos estrellas*/
+.card{
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenedor-cards{
+    display: flex;
+    flex-direction:row;
+}
+
+.titulo-producto {
+    color: #8B4513;
+    min-height: 48px;        
+    display: flex;
+    align-items: center;      
+    justify-content: center;  
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.imagen-producto{
+    height: 130px;
+    width: 80%;
+    object-fit: cover;       
+    border-radius: 5px;
+}
+
+.precio-producto{
+    margin-top: 5px;
+    color: #8B4513;
+}
+
+/*FORMULARIO CONTACTO*/
+#formularioContacto .contenedor {
+    font-family:"Montserrat", sans-serif ;
+    text-align: center;
+    max-width: 500px ;
+    margin-top: 50px;
+    margin: 20px auto ;
+    padding: 30px 15px ;
+
+}
+.logo-formulario{
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+#formularioContacto .contenedor h2{
+    font-family:"Playfair Display",serif ;
+    margin-bottom: 30px;
+  
+}
+
+.btn-success:hover{
+    background-color: #FFD700;
+    color: #333333;
+}
+
+/*BLOG NOTICIAS*/
+#noticias .card{
+    margin: 0 auto;
+    margin-top: 50px;
+    overflow: hidden;
+}
+#noticias .card.row{
+    align-items: stretch;
+}
+#noticias .card .col-md-4{
+    display: flex;
+}
+#noticias .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 ;
+}
+
+#noticias h2{
+    font-family: "Playfair Display",serif;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/*Acceso*/
+.acceder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.acceder a{
+    color:#333333;
+    text-decoration: none;
+    
+}
+
+
+/*NOSOTROS*/
+#contenido-nosotros .card{
+    font-family: "Montserrat", sans-serif;
+    margin-top: 50px;
+    overflow: hidden;
+   
+}
+
+#contenido-nosotros .card-izquierda{
+    margin-right: auto;
+    margin-left: 4%;
+}
+
+#contenido-nosotros .card-derecha{
+    margin-left: auto;
+    margin-right: 4%;
+}
+#contenido-nosotros .card .row{
+    align-items: stretch;
+    justify-content:space-evenly;
+}
+#contenido-nosotros .card .col-md-4{
+    display: flex;
+  
+}
+#contenido-nosotros .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 ;
+}
+
+#contenido-nosotros h2{
+    font-family: "Playfair Display",serif;
+    margin-top: 25px;
+}
+
+#contenido-nosotros .titulo-primero{
+    text-align: left;
+    margin-left: 25%;
+}
+
+#contenido-nosotros .titulo-segundo{
+    text-align: right;
+    margin-right: 25%;
+}
+
+
+
+/*FORMULARIO CREACION CUENTA*/
+#formularioCrear .contenedor{
+    font-family:"Montserrat", sans-serif ;
+    text-align: center;
+    max-width: 500px ;
+    margin-top: 50px;
+    margin: 20px auto ;
+    padding: 30px 15px ;
+
+}

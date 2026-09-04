@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <header>
+       <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand d-flex align-item-center gap-2 py-0" href="main-logout.html">
+                    <img src="../img/HuertoHogar.png" alt="Huerto Hogar" class="logo-navbar">
+                    <span>Huerto Hogar</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+        </nav>
+    </header>
+    <main class="contenidoCrear">
+        <section id="formularioCrear">
+            <div class="contenedor">
+                <div class="logo">
+                    <img src="../img/HuertoHogar.png" alt="logo huerto hogar" class="logo-formulario">
+                    <h2>Crear Cuenta</h2>
+                    <p>Datos personales</p>
+                    <div class="form-floating mb-2">
+                        <input type ="text" class="form-control" id="inputRun" placeholder="19011022k" maxlength="9">
+                        <label for = "inputRun">Run (sin puntos ni guion)</label>
+                        <div id = "errorRun" class="texto-error"></div>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="nombre" class="form-control" id="inputNombre" placeholder="Pepito" maxlength="50">
+                        <label for="inputNombre">Nombres</label>
+                        <div id = "errorNombre" class="texto-error"></div>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="inputApellido" placeholder=" Perez" maxlength="100">
+                        <label for="inputApellido">Apellidos</label>
+                        <div id="errorApellido" class="texto-error"></div>
+                    </div>
+                    <p>Correo electrónico</p>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" id="inputCorreo" placeholder="nombre@duocuc.cl" maxlength="100">
+                        <label for="inputCorreo">Correo Electrónico</label>
+                        <div id="errorCorreo" class="texto-error"></div>
+
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="inputCorreoRepetido" placeholder="name@example.com" maxlength="100">
+                        <label for="inputCorreoRepetido">Repita su Correo Electrónico</label>
+                        <div id="errorCorreoRepetido" class="texto-error"></div>
+                    </div>
+                    <p>Contraseña (min. 6 dígitos)</p>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="inputpassword" placeholder="name@example.com" minlength="6">
+                        <label for="inputpassword">Contraseña</label>
+                        <div id="errorPassword" class="texto-error"></div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="inputpasswordRepetido" placeholder="name@example.com" minlength="6">
+                        <label for="inputpasswordRepetido">Repita su Contraseña</label>
+                        <div id="errorPasswordRepetida" class="texto-error"></div>
+                    </div>
+
+                    <p>Telefono</p>
+
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="inputTelefono" placeholder="+56945678912">
+                        <label for="inputTelefono"> Telefono  </label>
+                    </div>
+
+                    <p>Ingresar Direccion</p>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <select class="form-select" id="seleccionRegion">
+                                <option value="" selected disabled>---Selecciona la Region</option>
+                            </select>
+
+                        </div>
+
+                         <div class="col-md-6">
+                            <select class="form-select" id="seleccionComuna">
+                                <option value="" selected disabled>---Selecciona la Comuna</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputDireccion" placeholder="Calle Falsa 123" maxlength="300">
+                        <label for="inputDireccion">Direccion</label>
+                        <div id="errorDireccion" class="texto-error"></div>
+                    </div>
+
+
+                    <div class="acceder">
+                        <div class="btn-envio">
+                            <button type="button" id="btnEnviar" class="btn btn-success py-2">Enviar</button>
+                        </div>
+                        <a href="acceder.html">Iniciar sesión</a>
+                    </div>
+                </div>
+    
+            </div>
+        
+        </section>
+
+    </main>
+
+    <footer>
+        <section id="footer">
+            <div class="footer-contenido">
+            <p>&copy 2026 🌱 Huerto Hogar | Del campo al hogar 🏠 - Version 1.0</p>
+        </div>
+
+        </section>
+
+    </footer>
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../java/function.js"></script>
+    <script src="../java/regiones.js"></script>
+</body>
+</html>
