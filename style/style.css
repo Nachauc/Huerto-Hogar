@@ -18,6 +18,10 @@ body{
     color: #8B4513;
 }
 
+h1, h2, h3, h4, h5{
+    font-family: "Playfair Display",serif;
+}
+
 h1, .card-title{
     color: #8B4513;
     font-weight: 600;
@@ -137,7 +141,8 @@ footer{
 
 
 #productosEstrella .titulo-producto {
-    color: #8B4513;
+    font-family: "Playfair Display",serif;
+    color:#8B4513;
     min-height: 48px;        
     display: flex;
     align-items: center;      
@@ -155,18 +160,20 @@ footer{
 
 #productoEstrella .precio-producto{
     margin-top: 5px;
-    color: #8B4513;
+    color:#333333;
 }
 
 
 
 #productosVenta .titulo-producto {
+    font-family: "Playfair Display",serif;
     color: #8B4513;
     min-height: 48px;        
     display: flex;
     align-items: center;      
     justify-content: flex-start;  
     text-align: center;
+    
 }
 
 #productosVenta .precio-producto{
@@ -177,7 +184,7 @@ footer{
 }
 
 #productosVenta .descripcion-producto{
-    color: #8B4513;
+    color: #333333;
     min-height: 48px;        
     display: flex;
     align-items: center;      
@@ -303,11 +310,6 @@ footer{
 
 }
 
-
-
-
-
-
 /*Acceso*/
 .acceder{
     display: flex;
@@ -324,13 +326,6 @@ footer{
     text-decoration: none;
     
 }
-
-
-
-
-
-
-
 
 
 /*offConvas*/
@@ -365,6 +360,11 @@ footer{
     flex-direction: column;
     width: 100%;
     gap: 25px;
+    color: #333333;
+}
+
+.contenedor-presentacion h3{
+    color: #8B4513;
 }
 
 .tarjeta-presentacion{

@@ -143,18 +143,18 @@ if (prod) {
     col.className = "col-12 col-md-6 col-lg-4";
 
     const card = document.createElement("div");
-    card.className = "card h-100 shadow-sm p-3";
+    card.className = "card h-100 shadow-sm p-4";
 
     const rowCard = document.createElement("div");
-    rowCard.className = "row g-2 align-items-start h-100";
+    rowCard.className = "row g-2 h-100";
 
     //imagen ocupará col-4 y el texto col-8 para completar los 12
     const colImg = document.createElement("div");
-    colImg.className = "col-4";
+    colImg.className = "col-4 h-100";
 
     const imagenProducto = document.createElement("img");
     imagenProducto.src = i.imagen;
-    imagenProducto.className = "img-fluid rounded";
+    imagenProducto.className = "imgprod img-fluid rounded";
     imagenProducto.style.height = "100%";
     imagenProducto.style.objectFit = "cover";
     colImg.appendChild(imagenProducto);
